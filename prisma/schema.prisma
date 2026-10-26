@@ -43,7 +43,7 @@ model RawChangeSnapshot {
   weekOffset       Int      @default(0)
   dayIndex         Int
   periodNumber     Int
-  changeType       String // "substitute" | "cancellation"
+  changeType       String // "substitute" | "cancellation" | "event" (e.g. a whole-day closure/holiday)
   rawText          String
   matchedSignature String?
   scrapedAt        DateTime @default(now())

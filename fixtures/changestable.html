@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&#x5E8;&#x5D0;&#x5E9;&#x5D9;</title>
+    <script type="importmap">{
+  "imports": {
+    "./js/class-picker.js": "./js/class-picker.hlpw5bn6qz.js",
+    "./js/events-config.js": "./js/events-config.vps3vo10lc.js",
+    "./js/files-admin.js": "./js/files-admin.q6rptxi8le.js",
+    "./js/gallery.js": "./js/gallery.ceglm7otcw.js",
+    "./js/image-dropzone.js": "./js/image-dropzone.sa985vy7rv.js",
+    "./js/platform-admin.js": "./js/platform-admin.c2udksba5b.js",
+    "./js/screen-layermap.js": "./js/screen-layermap.h0t28yk43n.js",
+    "./js/site.js": "./js/site.i4vi9lui0v.js",
+    "./js/sso-popup.js": "./js/sso-popup.slfu9nlrbt.js",
+    "./js/sso-signin.js": "./js/sso-signin.fpxioe0123.js",
+    "./js/statictext-editor.js": "./js/statictext-editor.teko9qmpj6.js",
+    "./js/timetable-showclasses.js": "./js/timetable-showclasses.agpwdxz0dx.js",
+    "./js/timetable.js": "./js/timetable.a0qm65rj6w.js",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.js": "./lib/bootstrap/dist/js/bootstrap.bundle.6cfz1n2cew.js",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.js": "./lib/bootstrap/dist/js/bootstrap.bundle.min.493y06b0oq.js",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.js": "./lib/bootstrap/dist/js/bootstrap.esm.min.jj8uyg4cgr.js",
+    "./lib/bootstrap/dist/js/bootstrap.esm.js": "./lib/bootstrap/dist/js/bootstrap.esm.vr1egmr9el.js",
+    "./lib/bootstrap/dist/js/bootstrap.min.js": "./lib/bootstrap/dist/js/bootstrap.min.63fj8s7r0e.js",
+    "./lib/bootstrap/dist/js/bootstrap.js": "./lib/bootstrap/dist/js/bootstrap.notf2xhcfb.js",
+    "./lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js": "./lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.47otxtyo56.js",
+    "./lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js": "./lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.4v8eqarkd7.js",
+    "./lib/jquery-validation/dist/additional-methods.js": "./lib/jquery-validation/dist/additional-methods.83jwlth58m.js",
+    "./lib/jquery-validation/dist/additional-methods.min.js": "./lib/jquery-validation/dist/additional-methods.min.mrlpezrjn3.js",
+    "./lib/jquery-validation/dist/jquery.validate.js": "./lib/jquery-validation/dist/jquery.validate.lzl9nlhx6b.js",
+    "./lib/jquery-validation/dist/jquery.validate.min.js": "./lib/jquery-validation/dist/jquery.validate.min.ag7o75518u.js",
+    "./lib/jquery/dist/jquery.js": "./lib/jquery/dist/jquery.0i3buxo5is.js",
+    "./lib/jquery/dist/jquery.min.js": "./lib/jquery/dist/jquery.min.o1o13a6vjx.js",
+    "./lib/jquery/dist/jquery.slim.js": "./lib/jquery/dist/jquery.slim.2z0ns9nrw6.js",
+    "./lib/jquery/dist/jquery.slim.min.js": "./lib/jquery/dist/jquery.slim.min.muycvpuwrr.js"
+  },
+  "integrity": {
+    "./js/class-picker.hlpw5bn6qz.js": "sha256-a5XNCGABmxiFNjDHLq8ctVmqRRiN5Jx+E310pKLuvE0=",
+    "./js/class-picker.js": "sha256-a5XNCGABmxiFNjDHLq8ctVmqRRiN5Jx+E310pKLuvE0=",
+    "./js/events-config.js": "sha256-I6NAcc6tG3xl1VhnL4JacdmhctYereRCn88PlMS/lys=",
+    "./js/events-config.vps3vo10lc.js": "sha256-I6NAcc6tG3xl1VhnL4JacdmhctYereRCn88PlMS/lys=",
+    "./js/files-admin.js": "sha256-Hik5jffKK8TLlx/fUwUzbk9ckQtqTjRaFJJdnYDOON8=",
+    "./js/files-admin.q6rptxi8le.js": "sha256-Hik5jffKK8TLlx/fUwUzbk9ckQtqTjRaFJJdnYDOON8=",
+    "./js/gallery.ceglm7otcw.js": "sha256-RFgQhawpKAIB5QU8GSOnyQWN/i3WQmXXqiqpkSCkTFk=",
+    "./js/gallery.js": "sha256-RFgQhawpKAIB5QU8GSOnyQWN/i3WQmXXqiqpkSCkTFk=",
+    "./js/image-dropzone.js": "sha256-7D2F0boFoNjela+AZW2MPHG7MyIT8EfBn/wJOBiRewI=",
+    "./js/image-dropzone.sa985vy7rv.js": "sha256-7D2F0boFoNjela+AZW2MPHG7MyIT8EfBn/wJOBiRewI=",
+    "./js/platform-admin.c2udksba5b.js": "sha256-jHLmClX8GhHJSotqO3i1AGlJ0jH1SsWTgbnkhHNGc9M=",
+    "./js/platform-admin.js": "sha256-jHLmClX8GhHJSotqO3i1AGlJ0jH1SsWTgbnkhHNGc9M=",
+    "./js/screen-layermap.h0t28yk43n.js": "sha256-n/DRfqTTNWnrz2o2rPdHvefxL2+5045rLfalKND7kWo=",
+    "./js/screen-layermap.js": "sha256-n/DRfqTTNWnrz2o2rPdHvefxL2+5045rLfalKND7kWo=",
+    "./js/site.i4vi9lui0v.js": "sha256-7hS8RnXM+oHq7nm5GWm027Se1Pg52DXkaPRidJHTenE=",
+    "./js/site.js": "sha256-7hS8RnXM+oHq7nm5GWm027Se1Pg52DXkaPRidJHTenE=",
+    "./js/sso-popup.js": "sha256-gOBSFYK+5227ukeoNBBs249iSkjAInZppoxFQXeGOcc=",
+    "./js/sso-popup.slfu9nlrbt.js": "sha256-gOBSFYK+5227ukeoNBBs249iSkjAInZppoxFQXeGOcc=",
+    "./js/sso-signin.fpxioe0123.js": "sha256-3TR6in1/O9XY96yXFkes9rmvfwAtnUCAzHZDKpZMoGc=",
+    "./js/sso-signin.js": "sha256-3TR6in1/O9XY96yXFkes9rmvfwAtnUCAzHZDKpZMoGc=",
+    "./js/statictext-editor.js": "sha256-VW4X/Ull4XkxOApKGbCnL5s8InF8G37fj71sqFERNkw=",
+    "./js/statictext-editor.teko9qmpj6.js": "sha256-VW4X/Ull4XkxOApKGbCnL5s8InF8G37fj71sqFERNkw=",
+    "./js/timetable-showclasses.agpwdxz0dx.js": "sha256-2snDpVLxWfxJAhEf/iwzdwqgnrTGIp3LbKr88icsfy4=",
+    "./js/timetable-showclasses.js": "sha256-2snDpVLxWfxJAhEf/iwzdwqgnrTGIp3LbKr88icsfy4=",
+    "./js/timetable.a0qm65rj6w.js": "sha256-KpcqMtzBTEUxpZnaSAPenxQV65ZZokRoA8YCFjAVQh8=",
+    "./js/timetable.js": "sha256-KpcqMtzBTEUxpZnaSAPenxQV65ZZokRoA8YCFjAVQh8=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.6cfz1n2cew.js": "sha256-mkoRoV24jV+rCPWcHDR5awPx8VuzzJKN0ibhxZ9/WaM=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.js": "sha256-mkoRoV24jV+rCPWcHDR5awPx8VuzzJKN0ibhxZ9/WaM=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.493y06b0oq.js": "sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.js": "sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.js": "sha256-exiXZNJDwucXfuje3CbXPbuS6+Ery3z9sP+pgmvh8nA=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.jj8uyg4cgr.js": "sha256-QZdFT1ZNdly4rmgUBtXmXFS9BU1FTa+sPe6h794sFRQ=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.js": "sha256-QZdFT1ZNdly4rmgUBtXmXFS9BU1FTa+sPe6h794sFRQ=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.vr1egmr9el.js": "sha256-exiXZNJDwucXfuje3CbXPbuS6+Ery3z9sP+pgmvh8nA=",
+    "./lib/bootstrap/dist/js/bootstrap.js": "sha256-+UW802wgVfnjaSbdwyHLlU7AVplb0WToOlvN1CnzIac=",
+    "./lib/bootstrap/dist/js/bootstrap.min.63fj8s7r0e.js": "sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ=",
+    "./lib/bootstrap/dist/js/bootstrap.min.js": "sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ=",
+    "./lib/bootstrap/dist/js/bootstrap.notf2xhcfb.js": "sha256-+UW802wgVfnjaSbdwyHLlU7AVplb0WToOlvN1CnzIac=",
+    "./lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.47otxtyo56.js": "sha256-wJQaJ0XynBE2fq6CexXXhxKu7fstVmQc7V2MHNTo+WQ=",
+    "./lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js": "sha256-wJQaJ0XynBE2fq6CexXXhxKu7fstVmQc7V2MHNTo+WQ=",
+    "./lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.4v8eqarkd7.js": "sha256-YJa7W8EiQdQpkk93iGEjjnLSUWRpRJbSfzfURh1kxz4=",
+    "./lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js": "sha256-YJa7W8EiQdQpkk93iGEjjnLSUWRpRJbSfzfURh1kxz4=",
+    "./lib/jquery-validation/dist/additional-methods.83jwlth58m.js": "sha256-XL6yOf4sfG2g15W8aB744T4ClbiDG4IMGl2mi0tbzu0=",
+    "./lib/jquery-validation/dist/additional-methods.js": "sha256-XL6yOf4sfG2g15W8aB744T4ClbiDG4IMGl2mi0tbzu0=",
+    "./lib/jquery-validation/dist/additional-methods.min.js": "sha256-jhvKRxZo6eW/PyCe+4rjBLzqesJlE8rnyQGEjk8l2k8=",
+    "./lib/jquery-validation/dist/additional-methods.min.mrlpezrjn3.js": "sha256-jhvKRxZo6eW/PyCe+4rjBLzqesJlE8rnyQGEjk8l2k8=",
+    "./lib/jquery-validation/dist/jquery.validate.js": "sha256-kRL82372ur5YrVTjFWp9muao9yeU8AoLiJxSb5ekmHg=",
+    "./lib/jquery-validation/dist/jquery.validate.lzl9nlhx6b.js": "sha256-kRL82372ur5YrVTjFWp9muao9yeU8AoLiJxSb5ekmHg=",
+    "./lib/jquery-validation/dist/jquery.validate.min.ag7o75518u.js": "sha256-umbTaFxP31Fv6O1itpLS/3+v5fOAWDLOUzlmvOGaKV4=",
+    "./lib/jquery-validation/dist/jquery.validate.min.js": "sha256-umbTaFxP31Fv6O1itpLS/3+v5fOAWDLOUzlmvOGaKV4=",
+    "./lib/jquery/dist/jquery.0i3buxo5is.js": "sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=",
+    "./lib/jquery/dist/jquery.js": "sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=",
+    "./lib/jquery/dist/jquery.min.js": "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=",
+    "./lib/jquery/dist/jquery.min.o1o13a6vjx.js": "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=",
+    "./lib/jquery/dist/jquery.slim.2z0ns9nrw6.js": "sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=",
+    "./lib/jquery/dist/jquery.slim.js": "sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=",
+    "./lib/jquery/dist/jquery.slim.min.js": "sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=",
+    "./lib/jquery/dist/jquery.slim.min.muycvpuwrr.js": "sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+  }
+}</script>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.rtl.min.c63t5i9ira.css" />
+    <link rel="stylesheet" href="/css/site.4b3wvbsl5u.css" />
+    <link rel="stylesheet" href="/ShfSchoolSite.a2lon5acj1.styles.css" />
+    
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header b-7m943i0s8c>
+        <nav b-7m943i0s8c class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div b-7m943i0s8c class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+                    
+
+                    
+    <span class="tenant-name">&#x5D1;&#x5D9;&#x5EA; &#x5D4;&#x5E1;&#x5E4;&#x5E8; &#x5D4;&#x5E8;&#x5D9;&#x5D0;&#x5DC;&#x5D9; &#x5D1;&#x5D9;&#x5EA; &#x5D1;&#x5D9;&#x5E8;&#x5DD; &#x5D7;&#x5D9;&#x5E4;&#x5D4;</span>
+
+                </a>
+                <button b-7m943i0s8c class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span b-7m943i0s8c class="navbar-toggler-icon"></span>
+                </button>
+                <div b-7m943i0s8c class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul b-7m943i0s8c class="navbar-nav flex-grow-1">
+                        
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="/">&#x5E8;&#x5D0;&#x5E9;&#x5D9;</a>
+            </li>
+
+
+                    </ul>
+                    <div b-7m943i0s8c class="d-flex align-items-center">
+                        
+    <a class="btn btn-outline-primary btn-sm" href="/Account/SignIn?returnUrl=%2F">כניסה למערכת</a>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div b-7m943i0s8c class="container">
+        <main b-7m943i0s8c role="main" class="pb-3">
+            
+    <h1 class="display-4">&#x5E8;&#x5D0;&#x5E9;&#x5D9;</h1>
+
+
+<section class="card mb-3 tt-module" dir="rtl">
+    <div class="card-header d-flex align-items-center gap-2">
+        <span class="fw-semibold">&#x5DE;&#x5E2;&#x5E8;&#x5DB;&#x5EA; &#x5E9;&#x5E2;&#x5D5;&#x5EA;</span>
+        
+
+    </div>
+    <div class="card-body">
+            <form method="get" action="/" class="d-flex align-items-center gap-2 mb-3 tt-class-form">
+                <input type="hidden" name="tab" value="changestable" />
+                <label for="tt-cls-13874" class="fw-bold mb-0">כיתה</label>
+                <select id="tt-cls-13874" name="cls" class="form-select form-select-sm w-auto">
+                        <option value="172">&#x5D8;-1</option>
+                        <option value="173">&#x5D8;-2</option>
+                        <option value="174">&#x5D8;-3</option>
+                        <option value="175">&#x5D8;-4</option>
+                        <option value="176">&#x5D8;-5</option>
+                        <option value="177">&#x5D8;-6</option>
+                        <option value="178">&#x5D8;-7</option>
+                        <option value="179">&#x5D8;-8</option>
+                        <option value="180">&#x5D8;-9</option>
+                        <option value="181">&#x5D8;-10</option>
+                        <option value="182">&#x5D8;-11</option>
+                        <option value="183">&#x5D8;-12</option>
+                        <option value="184">&#x5D8;-13</option>
+                        <option value="185">&#x5D8;-14</option>
+                        <option value="186">&#x5D8;-15</option>
+                        <option value="128">&#x5D9;-1</option>
+                        <option value="129">&#x5D9;-2</option>
+                        <option value="130">&#x5D9;-3</option>
+                        <option value="131">&#x5D9;-4</option>
+                        <option value="132">&#x5D9;-5</option>
+                        <option value="133">&#x5D9;-6</option>
+                        <option value="134">&#x5D9;-7</option>
+                        <option value="135">&#x5D9;-8</option>
+                        <option value="136">&#x5D9;-9</option>
+                        <option value="137">&#x5D9;-10</option>
+                        <option value="138">&#x5D9;-11</option>
+                        <option value="139">&#x5D9;-12</option>
+                        <option value="140">&#x5D9;-13</option>
+                        <option value="126">&#x5D9;-14</option>
+                        <option value="171">&#x5D9;-15</option>
+                        <option value="141">&#x5D9;&#x5D0;-1</option>
+                        <option value="142">&#x5D9;&#x5D0;-2</option>
+                        <option value="143">&#x5D9;&#x5D0;-3</option>
+                        <option value="144">&#x5D9;&#x5D0;-4</option>
+                        <option value="145">&#x5D9;&#x5D0;-5</option>
+                        <option value="146">&#x5D9;&#x5D0;-6</option>
+                        <option value="147">&#x5D9;&#x5D0;-7</option>
+                        <option value="148">&#x5D9;&#x5D0;-8</option>
+                        <option value="149">&#x5D9;&#x5D0;-9</option>
+                        <option value="150">&#x5D9;&#x5D0;-10</option>
+                        <option value="151">&#x5D9;&#x5D0;-11</option>
+                        <option value="152">&#x5D9;&#x5D0;-12</option>
+                        <option value="153">&#x5D9;&#x5D0;-13</option>
+                        <option value="154">&#x5D9;&#x5D0;-14</option>
+                        <option value="187" selected="selected">&#x5D9;&#x5D0;-15</option>
+                        <option value="190">&#x5D9;&#x5D0;-16</option>
+                        <option value="156">&#x5D9;&#x5D1;-1</option>
+                        <option value="157">&#x5D9;&#x5D1;-2</option>
+                        <option value="158">&#x5D9;&#x5D1;-3</option>
+                        <option value="159">&#x5D9;&#x5D1;-4</option>
+                        <option value="160">&#x5D9;&#x5D1;-5</option>
+                        <option value="161">&#x5D9;&#x5D1;-6</option>
+                        <option value="162">&#x5D9;&#x5D1;-7</option>
+                        <option value="163">&#x5D9;&#x5D1;-8</option>
+                        <option value="164">&#x5D9;&#x5D1;-9</option>
+                        <option value="165">&#x5D9;&#x5D1;-10</option>
+                        <option value="166">&#x5D9;&#x5D1;-11</option>
+                        <option value="167">&#x5D9;&#x5D1;-12</option>
+                        <option value="168">&#x5D9;&#x5D1;-13</option>
+                        <option value="169">&#x5D9;&#x5D1;-14</option>
+                        <option value="188">&#x5D9;&#x5D1;-15</option>
+                </select>
+                <noscript>
+                    <button type="submit" class="btn btn-sm btn-outline-secondary">הצג</button>
+                </noscript>
+            </form>
+            <ul class="nav nav-tabs mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           href="/?cls=187&amp;tab=changestable">&#x5DE;&#x5E2;&#x5E8;&#x5DB;&#x5EA; &#x5D5;&#x5E9;&#x5D9;&#x5E0;&#x5D5;&#x5D9;&#x5D9;&#x5DD;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link "
+                           href="/?cls=187&amp;tab=timetable">&#x5DE;&#x5E2;&#x5E8;&#x5DB;&#x5EA; &#x5E9;&#x5E2;&#x5D5;&#x5EA;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link "
+                           href="/?cls=187&amp;tab=changes">&#x5E9;&#x5D9;&#x5E0;&#x5D5;&#x5D9;&#x5D9;&#x5DD;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link "
+                           href="/?cls=187&amp;tab=exams">&#x5DE;&#x5D1;&#x5D7;&#x5E0;&#x5D9;&#x5DD;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link "
+                           href="/?cls=187&amp;tab=events">&#x5D0;&#x5D9;&#x5E8;&#x5D5;&#x5E2;&#x5D9;&#x5DD;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link "
+                           href="/?cls=187&amp;tab=messages">&#x5D4;&#x5D5;&#x5D3;&#x5E2;&#x5D5;&#x5EA; &#x5DB;&#x5DC;&#x5DC;&#x5D9;&#x5D5;&#x5EA;</a>
+                    </li>
+            </ul>
+                <div class="d-flex justify-content-between mb-2">
+                    <a class="btn btn-sm btn-outline-primary" href="/?cls=187&amp;tab=changestable&amp;week=-1">&laquo; שבוע קודם</a>
+                    <a class="btn btn-sm btn-outline-primary" href="/?cls=187&amp;tab=changestable&amp;week=1">שבוע הבא &raquo;</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="TTTable" dir="rtl">
+                        <tr>
+                            <td class="CName" style="width:48px"></td>
+                                <td class="CTitle" data-day="0">יום ראשון 25.10</td>
+                                <td class="CTitle" data-day="1">יום שני 26.10</td>
+                                <td class="CTitle" data-day="2">יום שלישי 27.10</td>
+                                <td class="CTitle" data-day="3">יום רביעי 28.10</td>
+                                <td class="CTitle" data-day="4">יום חמישי 29.10</td>
+                                <td class="CTitle" data-day="5">יום שישי 30.10</td>
+                        </tr>
+                            <tr>
+                                <td class="CName"><b>0<br/><span class="hour-time">07:20</span><br/><span class="hour-time">08:00</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>1<br/><span class="hour-time">08:00</span><br/><span class="hour-time">08:45</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>אזרחות</b>&nbsp;&nbsp;(213)<br/>טנדלר אלכס</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableFillChange">שטרמל ליאוניד -&gt; חדר: מעבדת מחשבים 2</div>
+                                                <div class="TTChange TableFillChange">אהרון אביגיל -&gt; חדר: מדעים 9</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(513)<br/>בר-טל סיגל</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(114)<br/>אוגנסיאן יסניה</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(124)<br/>ריבגין נעמי</div>
+                                                <div class="TTLesson"><b>אנגלית- מואץ</b>&nbsp;&nbsp;(412)<br/>כהן ויקי</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(323)<br/>שור אפרת</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(423)<br/>אסולין רינת</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(322)<br/>סמול רחל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTChange TableFillChange">דוידוב אוהד -&gt; חדר: 211</div>
+                                                <div class="TTChange TableFillChange">מיכלובי&#39;ץ רונה -&gt; חדר: 120</div>
+                                                <div class="TTLesson"><b>חינוך גופני 2</b>&nbsp;&nbsp;(313)<br/>בודגה ערן</div>
+                                                <div class="TTLesson"><b>ביולוגיה 2 חקר- מעבדה</b><br/>נויפלד דניאל</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 2</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>מטר ערין</div>
+                                                <div class="TTLesson"><b>יסודות הפיקוד 2</b>&nbsp;&nbsp;(124)<br/>קניזו דוד</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 2</b>&nbsp;&nbsp;(מעבדת מדעים 4)<br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>כלכלה 2</b>&nbsp;&nbsp;(514)<br/>מסאד פריאל</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 2</b>&nbsp;&nbsp;(מדעים 10)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>ביולוגיה 2</b>&nbsp;&nbsp;(מעבדת מדעים 7)<br/>נויפלד דניאל</div>
+                                                <div class="TTLesson"><b>פיסיקה 2</b>&nbsp;&nbsp;(מעבדת מדעים 8)<br/>דניאל אלירן</div>
+                                                <div class="TTLesson"><b>מדעי המדינה כלכלה 2</b>&nbsp;&nbsp;(512)<br/>שוסטרמן טל</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 2</b>&nbsp;&nbsp;(מעבדת מחשבים 2)<br/>לבילוב אירנה</div>
+                                                <div class="TTLesson"><b>פסיכולוגיה 2</b>&nbsp;&nbsp;(513)<br/>ארם- מזרחי אילנית</div>
+                                                <div class="TTLesson"><b>כלכלה 2</b>&nbsp;&nbsp;(502)<br/>שוורצנברג רגינה</div>
+                                                <div class="TTLesson"><b>תקשורת 2</b>&nbsp;&nbsp;(601)<br/>דקל אביב</div>
+                                                <div class="TTLesson"><b>פיסיקה 2</b>&nbsp;&nbsp;(מעבדת מדעים 6)<br/>סער אלכס</div>
+                                                <div class="TTLesson"><b>גיאוגרפיה 2</b>&nbsp;&nbsp;(504)<br/>קידר אורן</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 2</b>&nbsp;&nbsp;(428 -מעבדת מחשבים)<br/>סויסה קובי</div>
+                                                <div class="TTLesson"><b>כימיה 2</b>&nbsp;&nbsp;(מעבדת מדעים 2)<br/>קהת טל</div>
+                                                <div class="TTLesson"><b>פיסיקה מוגבר</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>גלאובך דן</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 2-חקר מעבדה</b><br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>צילום סטילס 2</b>&nbsp;&nbsp;(חדר סטילס)<br/>בן חורין רימון</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 2</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>שולמן אסף</div>
+                                                <div class="TTLesson"><b>תקשורת 2</b>&nbsp;&nbsp;(תקשורת - אודיטוריום)<br/>לם ענבל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>אזרחות</b>&nbsp;&nbsp;(מדעים 10)<br/>טנדלר אלכס</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>2<br/><span class="hour-time">08:45</span><br/><span class="hour-time">09:30</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTChange TableFillChange">סגל מירב &lt;- גרינברג גל תקשורת - אודיטוריום </div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableFillChange">שטרמל ליאוניד -&gt; חדר: מעבדת מחשבים 2</div>
+                                                <div class="TTChange TableFillChange">אהרון אביגיל -&gt; חדר: מדעים 9</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(423)<br/>אסולין רינת</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(114)<br/>אוגנסיאן יסניה</div>
+                                                <div class="TTLesson"><b>אנגלית- מואץ</b>&nbsp;&nbsp;(412)<br/>כהן ויקי</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(513)<br/>בר-טל סיגל</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(322)<br/>סמול רחל</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(323)<br/>שור אפרת</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(124)<br/>ריבגין נעמי</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTChange TableFillChange">מיכלובי&#39;ץ רונה -&gt; חדר: 120</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 2-חקר מעבדה</b><br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>פסיכולוגיה 2</b>&nbsp;&nbsp;(513)<br/>ארם- מזרחי אילנית</div>
+                                                <div class="TTLesson"><b>גיאוגרפיה 2</b>&nbsp;&nbsp;(211)<br/>יחיא-קמה דקלה</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 2</b>&nbsp;&nbsp;(מעבדת מחשבים 2)<br/>לבילוב אירנה</div>
+                                                <div class="TTLesson"><b>כלכלה 2</b>&nbsp;&nbsp;(514)<br/>מסאד פריאל</div>
+                                                <div class="TTLesson"><b>פיסיקה 2</b>&nbsp;&nbsp;(מעבדת מדעים 8)<br/>דניאל אלירן</div>
+                                                <div class="TTLesson"><b>תקשורת 2</b>&nbsp;&nbsp;(תקשורת - אודיטוריום)<br/>לם ענבל</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 2</b>&nbsp;&nbsp;(428 -מעבדת מחשבים)<br/>סויסה קובי</div>
+                                                <div class="TTLesson"><b>יסודות הפיקוד 2</b>&nbsp;&nbsp;(124)<br/>קניזו דוד</div>
+                                                <div class="TTLesson"><b>ביולוגיה 2 חקר- מעבדה</b><br/>נויפלד דניאל</div>
+                                                <div class="TTLesson"><b>צילום סטילס 2</b>&nbsp;&nbsp;(חדר סטילס)<br/>בן חורין רימון</div>
+                                                <div class="TTLesson"><b>פיסיקה 2</b>&nbsp;&nbsp;(מעבדת מדעים 6)<br/>סער אלכס</div>
+                                                <div class="TTLesson"><b>דיפלומטיה באנגלית 2</b>&nbsp;&nbsp;(123)<br/>אהרון אביגיל</div>
+                                                <div class="TTLesson"><b>חינוך גופני 2</b>&nbsp;&nbsp;(313)<br/>בודגה ערן</div>
+                                                <div class="TTLesson"><b>פיסיקה מוגבר</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>גלאובך דן</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 2</b>&nbsp;&nbsp;(מדעים 10)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>תקשורת 2</b>&nbsp;&nbsp;(601)<br/>דקל אביב</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 2</b>&nbsp;&nbsp;(מעבדת מחשבים 3)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 2</b>&nbsp;&nbsp;(מעבדת מדעים 4)<br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 2</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>מטר ערין</div>
+                                                <div class="TTLesson"><b>מדעי המדינה כלכלה 2</b>&nbsp;&nbsp;(512)<br/>שוסטרמן טל</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 2</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>שולמן אסף</div>
+                                                <div class="TTLesson"><b>כימיה 2</b>&nbsp;&nbsp;(מעבדת מדעים 2)<br/>קהת טל</div>
+                                                <div class="TTLesson"><b>ביולוגיה 2</b>&nbsp;&nbsp;(מעבדת מדעים 7)<br/>נויפלד דניאל</div>
+                                                <div class="TTLesson"><b>כלכלה 2</b>&nbsp;&nbsp;(502)<br/>שוורצנברג רגינה</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>אזרחות</b>&nbsp;&nbsp;(מדעים 10)<br/>טנדלר אלכס</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>3<br/><span class="hour-time">09:45</span><br/><span class="hour-time">10:30</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(423)<br/>אסולין רינת</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(502)<br/>אוגנסיאן יסניה</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(312)<br/>שור אפרת</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(313)<br/>אהרון אביגיל</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(113)<br/>סמול רחל</div>
+                                                <div class="TTLesson"><b>אנגלית- מואץ</b>&nbsp;&nbsp;(413)<br/>כהן ויקי</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(323)<br/>בר-טל סיגל</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(123)<br/>ריבגין נעמי</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(515)<br/>שטרמל ליאוניד</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 124<br/>לקבוצה של אינבינדר אורי</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 231<br/>לקבוצה של אוחיון מירב</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 121<br/>לקבוצה של אלקין יוליה</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 413<br/>לקבוצה של דוד חמוטל</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 122<br/>לקבוצה של יצחקי דוד</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 321<br/>לקבוצה של רינגלשטיין איריס</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 322<br/>לקבוצה של ברמן דנה</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 114<br/>לקבוצה של אייל ענת</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 222<br/>לקבוצה של גון אורטל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTChange TableEventChange">שיח בכיתה בנושא יום אחרי הבחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>ספרות</b>&nbsp;&nbsp;(מדעים 11)<br/>סגל מירב</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>4<br/><span class="hour-time">10:30</span><br/><span class="hour-time">11:15</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(123)<br/>ריבגין נעמי</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(312)<br/>שור אפרת</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(113)<br/>סמול רחל</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(423)<br/>אסולין רינת</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(313)<br/>אהרון אביגיל</div>
+                                                <div class="TTLesson"><b>אנגלית- מואץ</b>&nbsp;&nbsp;(413)<br/>כהן ויקי</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(502)<br/>אוגנסיאן יסניה</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(323)<br/>בר-טל סיגל</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(515)<br/>שטרמל ליאוניד</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 124<br/>לקבוצה של אינבינדר אורי</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 231<br/>לקבוצה של אוחיון מירב</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 121<br/>לקבוצה של אלקין יוליה</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 413<br/>לקבוצה של דוד חמוטל</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 122<br/>לקבוצה של יצחקי דוד</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 321<br/>לקבוצה של רינגלשטיין איריס</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 322<br/>לקבוצה של ברמן דנה</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 114<br/>לקבוצה של אייל ענת</div>
+                                                <div class="TTChange TableExamChange">מבחן מתמטיקה, 222<br/>לקבוצה של גון אורטל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTLesson"><b>חינוך</b>&nbsp;&nbsp;(123)<br/>יודפת רון</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>חינוך</b>&nbsp;&nbsp;(סביבת למידה לנדס)<br/>יודפת רון</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                                <div class="TTLesson"><b>ערבית</b>&nbsp;&nbsp;(311)<br/>כהן אשר</div>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>5<br/><span class="hour-time">11:30</span><br/><span class="hour-time">12:15</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>הסטוריה</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>יודפת רון</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableFreeChange">ביטול מזרח תיכון 1, חנן גיל</div>
+                                                <div class="TTChange TableEventChange">שיח בכיתה בנושא אקלים בית ספרי</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTChange TableFillChange">אייל ענת -&gt; חדר: 423</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(412)<br/>גון אורטל</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(312)<br/>רינגלשטיין איריס</div>
+                                                <div class="TTLesson"><b>מתמטיקה 3 קטן</b>&nbsp;&nbsp;(123)<br/>אוחיון מירב</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(427)<br/>ברמן דנה</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(מחשבים - אודיטוריום)<br/>דוד חמוטל</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(111)<br/>יצחקי דוד</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(124)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(121)<br/>אלקין יוליה</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>ידיעת הלשון</b>&nbsp;&nbsp;(214)<br/>טל ליהיא</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                                <div class="TTLesson"><b>ערבית</b>&nbsp;&nbsp;(311)<br/>כהן אשר</div>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>6<br/><span class="hour-time">12:15</span><br/><span class="hour-time">13:00</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>הסטוריה</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>יודפת רון</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableFreeChange">כלכלה 1, בלילטי מאור<br/>עבודת כיתה</div>
+                                                <div class="TTChange TableFreeChange">ביטול מזרח תיכון 1, חנן גיל</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 1 חקר-מעבדה</b><br/>זבאנה מונזר</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 1</b>&nbsp;&nbsp;(מעבדת מחשבים 2)<br/>לבילוב אירנה</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 1</b>&nbsp;&nbsp;(מעבדת מדעים 4)<br/>זבאנה מונזר</div>
+                                                <div class="TTLesson"><b>גיאוגרפיה 1</b>&nbsp;&nbsp;(121)<br/>קידר אורן</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 1</b>&nbsp;&nbsp;(מדעים 10)<br/>קליימן איילת</div>
+                                                <div class="TTLesson"><b>ביולוגיה 1 חקר-מעבדה</b><br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>כלכלה 1</b>&nbsp;&nbsp;(413)<br/>מסאד פריאל</div>
+                                                <div class="TTLesson"><b>פיסיקה 1</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>אקסלרוד גנאדי</div>
+                                                <div class="TTLesson"><b>פיסיקה 1</b>&nbsp;&nbsp;(מעבדת מדעים 6)<br/>ברזובסקי אלכסנדרה</div>
+                                                <div class="TTLesson"><b>ערבית 1</b>&nbsp;&nbsp;(514)<br/>בורכוב מירי</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 1</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>אקירי עופר</div>
+                                                <div class="TTLesson"><b>מחשבת ישראל 1</b>&nbsp;&nbsp;(427)<br/>סוסקין אליסה</div>
+                                                <div class="TTLesson"><b>חינוך גופני 1</b>&nbsp;&nbsp;(410)<br/>ריכלין אלכסי</div>
+                                                <div class="TTLesson"><b>סוציולוגיה 1</b>&nbsp;&nbsp;(513)<br/>לורבר ענבר</div>
+                                                <div class="TTLesson"><b>משפטים</b>&nbsp;&nbsp;(323)<br/>להב יהודה</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 1</b>&nbsp;&nbsp;(302 רובוטיקה)<br/>שולמן אסף</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 1</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>מטר ערין</div>
+                                                <div class="TTLesson"><b>תיאטרון מעשי 1</b>&nbsp;&nbsp;(אולם תיאטרלי)<br/>מישוריס ילנה</div>
+                                                <div class="TTLesson"><b>ביולוגיה 1</b>&nbsp;&nbsp;(מעבדת מדעים 7)<br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>כימיה 1</b>&nbsp;&nbsp;(מעבדת מדעים 2)<br/>שלם דפנה</div>
+                                                <div class="TTLesson"><b>הסטוריה צבאית 1</b>&nbsp;&nbsp;(124)<br/>גלזר דב</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTChange TableFillChange">אייל ענת -&gt; חדר: 423</div>
+                                                <div class="TTLesson"><b>מתמטיקה 3 קטן</b>&nbsp;&nbsp;(123)<br/>אוחיון מירב</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(111)<br/>יצחקי דוד</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(312)<br/>רינגלשטיין איריס</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(121)<br/>אלקין יוליה</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(412)<br/>גון אורטל</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(427)<br/>ברמן דנה</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(124)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(מחשבים - אודיטוריום)<br/>דוד חמוטל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>ידיעת הלשון</b>&nbsp;&nbsp;(214)<br/>טל ליהיא</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                                <div class="TTLesson"><b>ערבית</b>&nbsp;&nbsp;(311)<br/>כהן אשר</div>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>7<br/><span class="hour-time">13:30</span><br/><span class="hour-time">14:15</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(113)<br/>דוד חמוטל</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(411)<br/>גון אורטל</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(124)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(111)<br/>יצחקי דוד</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(311)<br/>ברמן דנה</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(504)<br/>רינגלשטיין איריס</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(121)<br/>אלקין יוליה</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(114)<br/>אייל ענת</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableFillChange">מיכלובי&#39;ץ רונה -&gt; חדר: 121</div>
+                                                <div class="TTLesson"><b>פיסיקה מוגבר</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>גלאובך דן</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 2</b>&nbsp;&nbsp;(428 -מעבדת מחשבים)<br/>סויסה קובי</div>
+                                                <div class="TTLesson"><b>קולנוע 2</b>&nbsp;&nbsp;(תקשורת - אודיטוריום)<br/>צ&#39;יפרוט שובל</div>
+                                                <div class="TTLesson"><b>כימיה 2</b>&nbsp;&nbsp;(מעבדת מדעים 2)<br/>קהת טל</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 2</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>שולמן אסף</div>
+                                                <div class="TTLesson"><b>צילום סטילס 2</b>&nbsp;&nbsp;(חדר סטילס)<br/>הראל - אבן טלי</div>
+                                                <div class="TTLesson"><b>חקר מדעי המדינה 2</b>&nbsp;&nbsp;(111)<br/>לם ענבל</div>
+                                                <div class="TTLesson"><b>פיסיקה 2</b>&nbsp;&nbsp;(מעבדת מדעים 6)<br/>סער אלכס</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 2</b>&nbsp;&nbsp;(מדעים 10)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 2</b>&nbsp;&nbsp;(מעבדת מדעים 4)<br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>חינוך גופני 2</b>&nbsp;&nbsp;(410)<br/>גיל חני</div>
+                                                <div class="TTLesson"><b>קולנוע 2</b>&nbsp;&nbsp;(מחשבים - אודיטוריום)<br/>הנדלמן גיא</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 2</b>&nbsp;&nbsp;(מעבדת מחשבים 3)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 2</b>&nbsp;&nbsp;(302 רובוטיקה)<br/>אקירי עופר</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 2-חקר מעבדה</b><br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>כלכלה 2</b>&nbsp;&nbsp;(501)<br/>מסאד פריאל</div>
+                                                <div class="TTLesson"><b>כלכלה 2</b>&nbsp;&nbsp;(313)<br/>ארם- מזרחי אילנית</div>
+                                                <div class="TTLesson"><b>הסטוריה צבאית 2</b>&nbsp;&nbsp;(114)<br/>גלזר דב</div>
+                                                <div class="TTLesson"><b>פיסיקה 2</b>&nbsp;&nbsp;(מעבדת מדעים 8)<br/>דניאל אלירן</div>
+                                                <div class="TTLesson"><b>צילום סטילס 2</b>&nbsp;&nbsp;(601)<br/>בן חורין רימון</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 2</b>&nbsp;&nbsp;(מעבדת מחשבים 2)<br/>לבילוב אירנה</div>
+                                                <div class="TTLesson"><b>מדעי המדינה מנהיגות 2</b>&nbsp;&nbsp;(120)<br/>זוננפלד ענבר</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 2</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>מטר ערין</div>
+                                                <div class="TTLesson"><b>גיאוגרפיה 2</b>&nbsp;&nbsp;(511)<br/>יחיא-קמה דקלה</div>
+                                                <div class="TTLesson"><b>דיפלומטיה באנגלית 2</b>&nbsp;&nbsp;(514)<br/>אהרון אביגיל</div>
+                                                <div class="TTLesson"><b>ביולוגיה 2 חקר- מעבדה</b><br/>נויפלד דניאל</div>
+                                                <div class="TTLesson"><b>ביולוגיה 2</b>&nbsp;&nbsp;(מעבדת מדעים 7)<br/>נויפלד דניאל</div>
+                                                <div class="TTLesson"><b>סוציולוגיה 2</b>&nbsp;&nbsp;(513)<br/>לורבר ענבר</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTChange TableExamChange">מבחן גיאוגרפיה, 123<br/>לקבוצה של קידר אורן</div>
+                                                <div class="TTLesson"><b>משפטים</b>&nbsp;&nbsp;(תקשורת - אודיטוריום)<br/>דקל אביב</div>
+                                                <div class="TTLesson"><b>פיסיקה 1</b>&nbsp;&nbsp;(מעבדת מדעים 6)<br/>ברזובסקי אלכסנדרה</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 1</b>&nbsp;&nbsp;(מדעים 10)<br/>קליימן איילת</div>
+                                                <div class="TTLesson"><b>יסודות הפיקוד 1</b>&nbsp;&nbsp;(313)<br/>קניזו דוד</div>
+                                                <div class="TTLesson"><b>מזרח תיכון 1</b>&nbsp;&nbsp;(411)<br/>חנן גיל</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 1 חקר-מעבדה</b><br/>זבאנה מונזר</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 1</b>&nbsp;&nbsp;(מעבדת מחשבים 3)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 1</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>אקירי עופר</div>
+                                                <div class="TTLesson"><b>כימיה 1</b>&nbsp;&nbsp;(מעבדת מדעים 2)<br/>שלם דפנה</div>
+                                                <div class="TTLesson"><b>פיסיקה 1</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>אקסלרוד גנאדי</div>
+                                                <div class="TTLesson"><b>כלכלה 1</b>&nbsp;&nbsp;(412)<br/>בלילטי מאור</div>
+                                                <div class="TTLesson"><b>פסיכולוגיה 1</b>&nbsp;&nbsp;(514)<br/>ארם- מזרחי אילנית</div>
+                                                <div class="TTLesson"><b>מחשבת ישראל 1</b>&nbsp;&nbsp;(427)<br/>סוסקין אליסה</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 1</b>&nbsp;&nbsp;(428 -מעבדת מחשבים)<br/>סויסה קובי</div>
+                                                <div class="TTLesson"><b>דפלומטיה באנגלית 1</b>&nbsp;&nbsp;(322)<br/>דוידוב אוהד</div>
+                                                <div class="TTLesson"><b>ביולוגיה 1</b>&nbsp;&nbsp;(מעבדת מדעים 7)<br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>כלכלה 1</b>&nbsp;&nbsp;(512)<br/>שוסטרמן טל</div>
+                                                <div class="TTLesson"><b>חינוך גופני 1</b>&nbsp;&nbsp;(410)<br/>סבג ערן</div>
+                                                <div class="TTLesson"><b>ביולוגיה 1 חקר-מעבדה</b><br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 1</b>&nbsp;&nbsp;(מעבדת מדעים 4)<br/>זבאנה מונזר</div>
+                                                <div class="TTLesson"><b>ערבית 1</b>&nbsp;&nbsp;(221)<br/>בורכוב מירי</div>
+                                                <div class="TTLesson"><b>תיאטרון עיוני 1</b>&nbsp;&nbsp;(אולם תיאטרלי)<br/>תירוש יעל</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 1</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>מטר ערין</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>תנ&quot;ך</b>&nbsp;&nbsp;(501)<br/>גרינברג גל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>8<br/><span class="hour-time">14:15</span><br/><span class="hour-time">14:55</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(114)<br/>אייל ענת</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(121)<br/>אלקין יוליה</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(311)<br/>ברמן דנה</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(411)<br/>גון אורטל</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(504)<br/>רינגלשטיין איריס</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(124)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(113)<br/>דוד חמוטל</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(111)<br/>יצחקי דוד</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableFillChange">מיכלובי&#39;ץ רונה -&gt; חדר: 121</div>
+                                                <div class="TTLesson"><b>קולנוע 2</b>&nbsp;&nbsp;(מחשבים - אודיטוריום)<br/>הנדלמן גיא</div>
+                                                <div class="TTLesson"><b>פיסיקה 2</b>&nbsp;&nbsp;(מעבדת מדעים 6)<br/>סער אלכס</div>
+                                                <div class="TTLesson"><b>מדעי המדינה 2</b>&nbsp;&nbsp;(322)<br/>להב יהודה</div>
+                                                <div class="TTLesson"><b>כימיה 2</b>&nbsp;&nbsp;(מעבדת מדעים 2)<br/>קהת טל</div>
+                                                <div class="TTLesson"><b>ביולוגיה 2</b>&nbsp;&nbsp;(מעבדת מדעים 7)<br/>נויפלד דניאל</div>
+                                                <div class="TTLesson"><b>פיסיקה 2</b>&nbsp;&nbsp;(מעבדת מדעים 8)<br/>דניאל אלירן</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 2</b>&nbsp;&nbsp;(מעבדת מחשבים 3)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>ביולוגיה 2 חקר- מעבדה</b><br/>נויפלד דניאל</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 2-חקר מעבדה</b><br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 2</b>&nbsp;&nbsp;(302 רובוטיקה)<br/>אקירי עופר</div>
+                                                <div class="TTLesson"><b>כלכלה 2</b>&nbsp;&nbsp;(313)<br/>ארם- מזרחי אילנית</div>
+                                                <div class="TTLesson"><b>חינוך גופני 2</b>&nbsp;&nbsp;(410)<br/>גיל חני</div>
+                                                <div class="TTLesson"><b>דיפלומטיה באנגלית 2</b>&nbsp;&nbsp;(514)<br/>אהרון אביגיל</div>
+                                                <div class="TTLesson"><b>כלכלה 2</b>&nbsp;&nbsp;(501)<br/>מסאד פריאל</div>
+                                                <div class="TTLesson"><b>הסטוריה צבאית 2</b>&nbsp;&nbsp;(114)<br/>גלזר דב</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 2</b>&nbsp;&nbsp;(מדעים 10)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>פיסיקה מוגבר</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>גלאובך דן</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 2</b>&nbsp;&nbsp;(מעבדת מחשבים 2)<br/>לבילוב אירנה</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 2</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>שולמן אסף</div>
+                                                <div class="TTLesson"><b>קולנוע 2</b>&nbsp;&nbsp;(תקשורת - אודיטוריום)<br/>צ&#39;יפרוט שובל</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 2</b>&nbsp;&nbsp;(428 -מעבדת מחשבים)<br/>סויסה קובי</div>
+                                                <div class="TTLesson"><b>גיאוגרפיה 2</b>&nbsp;&nbsp;(511)<br/>יחיא-קמה דקלה</div>
+                                                <div class="TTLesson"><b>צילום סטילס 2</b>&nbsp;&nbsp;(601)<br/>בן חורין רימון</div>
+                                                <div class="TTLesson"><b>צילום סטילס 2</b>&nbsp;&nbsp;(חדר סטילס)<br/>הראל - אבן טלי</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 2</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>מטר ערין</div>
+                                                <div class="TTLesson"><b>סוציולוגיה 2</b>&nbsp;&nbsp;(513)<br/>לורבר ענבר</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 2</b>&nbsp;&nbsp;(מעבדת מדעים 4)<br/>שגב מירב</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTChange TableExamChange">מבחן גיאוגרפיה, 123<br/>לקבוצה של קידר אורן</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 1</b>&nbsp;&nbsp;(מעבדת מדעים 4)<br/>זבאנה מונזר</div>
+                                                <div class="TTLesson"><b>ערבית 1</b>&nbsp;&nbsp;(221)<br/>בורכוב מירי</div>
+                                                <div class="TTLesson"><b>כימיה 1</b>&nbsp;&nbsp;(מעבדת מדעים 2)<br/>שלם דפנה</div>
+                                                <div class="TTLesson"><b>תיאטרון מעשי 1</b>&nbsp;&nbsp;(אולם תיאטרלי)<br/>מישוריס ילנה</div>
+                                                <div class="TTLesson"><b>פיסיקה 1</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>אקסלרוד גנאדי</div>
+                                                <div class="TTLesson"><b>כלכלה 1</b>&nbsp;&nbsp;(412)<br/>בלילטי מאור</div>
+                                                <div class="TTLesson"><b>מזרח תיכון 1</b>&nbsp;&nbsp;(411)<br/>חנן גיל</div>
+                                                <div class="TTLesson"><b>ביולוגיה 1</b>&nbsp;&nbsp;(מעבדת מדעים 7)<br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 1 חקר-מעבדה</b><br/>זבאנה מונזר</div>
+                                                <div class="TTLesson"><b>פיסיקה 1</b>&nbsp;&nbsp;(מעבדת מדעים 6)<br/>ברזובסקי אלכסנדרה</div>
+                                                <div class="TTLesson"><b>מחשבת ישראל 1</b>&nbsp;&nbsp;(427)<br/>סוסקין אליסה</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 1</b>&nbsp;&nbsp;(מדעים 10)<br/>קליימן איילת</div>
+                                                <div class="TTLesson"><b>דפלומטיה באנגלית 1</b>&nbsp;&nbsp;(322)<br/>דוידוב אוהד</div>
+                                                <div class="TTLesson"><b>פסיכולוגיה 1</b>&nbsp;&nbsp;(514)<br/>ארם- מזרחי אילנית</div>
+                                                <div class="TTLesson"><b>משפטים</b>&nbsp;&nbsp;(תקשורת - אודיטוריום)<br/>דקל אביב</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 1</b>&nbsp;&nbsp;(מעבדת מחשבים 3)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 1</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>אקירי עופר</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 1</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>מטר ערין</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 1</b>&nbsp;&nbsp;(428 -מעבדת מחשבים)<br/>סויסה קובי</div>
+                                                <div class="TTLesson"><b>יסודות הפיקוד 1</b>&nbsp;&nbsp;(313)<br/>קניזו דוד</div>
+                                                <div class="TTLesson"><b>חינוך גופני 1</b>&nbsp;&nbsp;(410)<br/>סבג ערן</div>
+                                                <div class="TTLesson"><b>ביולוגיה 1 חקר-מעבדה</b><br/>שגב מירב</div>
+                                                <div class="TTLesson"><b>כלכלה 1</b>&nbsp;&nbsp;(512)<br/>שוסטרמן טל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(513)<br/>שטרמל ליאוניד</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(110)<br/>ריבגין נעמי</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(124)<br/>אהרון אביגיל</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(413)<br/>סמול רחל</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(121)<br/>אסולין רינת</div>
+                                                <div class="TTLesson"><b>אנגלית- מואץ</b>&nbsp;&nbsp;(214)<br/>כהן ויקי</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(503)<br/>שור אפרת</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(221)<br/>אוגנסיאן יסניה</div>
+                                                <div class="TTLesson"><b>אנגלית</b>&nbsp;&nbsp;(323)<br/>בר-טל סיגל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>9<br/><span class="hour-time">15:05</span><br/><span class="hour-time">15:40</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>תנ&quot;ך</b>&nbsp;&nbsp;(322)<br/>גרינברג גל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableFillChange">סויסה קובי -&gt; חדר: מעבדת מחשבים 1</div>
+                                                <div class="TTLesson"><b>קולנוע 2</b>&nbsp;&nbsp;(מחשבים - אודיטוריום)<br/>הנדלמן גיא</div>
+                                                <div class="TTLesson"><b>חינוך גופני 2</b>&nbsp;&nbsp;(410)<br/>גיל חני</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה פרוייקטים2</b>&nbsp;&nbsp;(מעבדת מחשבים 2)<br/>לבילוב אירנה</div>
+                                                <div class="TTLesson"><b>מדעי המדינה 2</b>&nbsp;&nbsp;(322)<br/>להב יהודה</div>
+                                                <div class="TTLesson"><b>פיסיקה מוגבר</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>גלאובך דן</div>
+                                                <div class="TTLesson"><b>פיסיקה 2</b>&nbsp;&nbsp;(מעבדת מדעים 8)<br/>דניאל אלירן</div>
+                                                <div class="TTLesson"><b>פיסיקה 2</b>&nbsp;&nbsp;(מעבדת מדעים 6)<br/>סער אלכס</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 2</b>&nbsp;&nbsp;(מדעים 10)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>קולנוע 2</b>&nbsp;&nbsp;(חדר סטילס)<br/>הראל - אבן טלי</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 2</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>שולמן אסף</div>
+                                                <div class="TTLesson"><b>צילום סטילס 2</b>&nbsp;&nbsp;(601)<br/>בן חורין רימון</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 2</b>&nbsp;&nbsp;(מעבדת מחשבים 3)<br/>אינבינדר אורי</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTLesson"><b>מדעי הרפואה 1</b>&nbsp;&nbsp;(מדעים 10)<br/>קליימן איילת</div>
+                                                <div class="TTLesson"><b>פיסיקה 1</b>&nbsp;&nbsp;(מעבדת מדעים 6)<br/>ברזובסקי אלכסנדרה</div>
+                                                <div class="TTLesson"><b>תיאטרון מעשי 1</b>&nbsp;&nbsp;(אולם תיאטרלי)<br/>מישוריס ילנה</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 1</b>&nbsp;&nbsp;(מעבדת מדעים 4)<br/>זבאנה מונזר</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה פרוייקטים1</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>שחאדה ג&#39;ואנה</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית 1 חקר-מעבדה</b><br/>זבאנה מונזר</div>
+                                                <div class="TTLesson"><b>דפלומטיה באנגלית 1</b>&nbsp;&nbsp;(322)<br/>לורבר ענבר</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 1</b>&nbsp;&nbsp;(428 -מעבדת מחשבים)<br/>סויסה קובי</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 1</b>&nbsp;&nbsp;(מעבדת מחשבים 3)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>פיסיקה 1</b>&nbsp;&nbsp;(מעבדת מדעים 5)<br/>אקסלרוד גנאדי</div>
+                                                <div class="TTLesson"><b>חינוך גופני 1</b>&nbsp;&nbsp;(410)<br/>סבג ערן</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 1</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>אקירי עופר</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(120)<br/>רינגלשטיין איריס</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(411)<br/>גון אורטל</div>
+                                                <div class="TTLesson"><b>מתמטיקה 4 קטן</b>&nbsp;&nbsp;(426)<br/>ברמן דנה</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(111)<br/>יצחקי דוד</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(122)<br/>אלקין יוליה</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(124)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(110)<br/>דוד חמוטל</div>
+                                                <div class="TTLesson"><b>מתמטיקה 5 קטן</b>&nbsp;&nbsp;(112)<br/>אייל ענת</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>10<br/><span class="hour-time">15:50</span><br/><span class="hour-time">16:30</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>חינוך גופני</b>&nbsp;&nbsp;(חדר כושר)<br/>שלי דפנה</div>
+                                                <div class="TTLesson"><b>חינוך גופני</b>&nbsp;&nbsp;(מגרש)<br/>רואש סיגל</div>
+                                                <div class="TTLesson"><b>חינוך גופני</b>&nbsp;&nbsp;(מקלט וולפסון)<br/>אהרון עינת</div>
+                                                <div class="TTLesson"><b>חינוך גופני</b>&nbsp;&nbsp;(אולם ספורט)<br/>הראל עוז</div>
+                                                <div class="TTLesson"><b>חינוך גופני</b>&nbsp;&nbsp;(חדר ספורט)<br/>בודגה ערן</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableFillChange">סויסה קובי -&gt; חדר: מעבדת מחשבים 1</div>
+                                                <div class="TTLesson"><b>צילום סטילס 2</b>&nbsp;&nbsp;(601)<br/>בן חורין רימון</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 2</b>&nbsp;&nbsp;(מדעים 10)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>קולנוע 2</b>&nbsp;&nbsp;(מחשבים - אודיטוריום)<br/>הנדלמן גיא</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 2</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>שולמן אסף</div>
+                                                <div class="TTLesson"><b>קולנוע 2</b>&nbsp;&nbsp;(חדר סטילס)<br/>הראל - אבן טלי</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה פרוייקטים2</b>&nbsp;&nbsp;(מעבדת מחשבים 2)<br/>לבילוב אירנה</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTLesson"><b>הנדסת תוכנה 1</b>&nbsp;&nbsp;(מעבדת מחשבים 3)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>תיאטרון מעשי 1</b>&nbsp;&nbsp;(אולם תיאטרלי)<br/>מישוריס ילנה</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה פרוייקטים1</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>שחאדה ג&#39;ואנה</div>
+                                                <div class="TTLesson"><b>מדעי המחשב 1</b>&nbsp;&nbsp;(428 -מעבדת מחשבים)<br/>סויסה קובי</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 1</b>&nbsp;&nbsp;(מדעים 10)<br/>קליימן איילת</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 1</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>אקירי עופר</div>
+                                                <div class="TTLesson"><b>דפלומטיה באנגלית 1</b>&nbsp;&nbsp;(322)<br/>לורבר ענבר</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>ספרות</b>&nbsp;&nbsp;(501)<br/>סגל מירב</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>11<br/><span class="hour-time">16:30</span><br/><span class="hour-time">17:15</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>ערבית</b>&nbsp;&nbsp;(412)<br/>שוקחה ג&#39;ניפר</div>
+                                                <div class="TTLesson"><b>מורשת דרוזית</b>&nbsp;&nbsp;(413)<br/>נסר אלדין והאב</div>
+                                                <div class="TTLesson"><b>הסטוריה מורחב</b>&nbsp;&nbsp;(422)<br/>הרצמן אורן</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableFillChange">סויסה קובי -&gt; חדר: מעבדת מחשבים 1</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 2</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>שולמן אסף</div>
+                                                <div class="TTLesson"><b>תקשורת 2</b>&nbsp;&nbsp;(תקשורת - אודיטוריום)<br/>לם ענבל</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה פרוייקטים2</b>&nbsp;&nbsp;(מעבדת מחשבים 2)<br/>לבילוב אירנה</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 2</b>&nbsp;&nbsp;(מדעים 10)<br/>גרופמן לירז</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTLesson"><b>תיאטרון מעשי 1</b>&nbsp;&nbsp;(אולם תיאטרלי)<br/>מישוריס ילנה</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה פרוייקטים1</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>שחאדה ג&#39;ואנה</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 1</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>אקירי עופר</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 1</b>&nbsp;&nbsp;(מעבדת מחשבים 3)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 1</b>&nbsp;&nbsp;(מדעים 10)<br/>קליימן איילת</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>ביולוגיה רפואית הרצאות</b>&nbsp;&nbsp;(יואל - אודיטוריום)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית הרצאות</b>&nbsp;&nbsp;(יואל - אודיטוריום)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>אמנות וחדשנות יוצרת</b><br/>קורולוב סטניסלב</div>
+                                                <div class="TTLesson"><b>מצוינות הומניסטיות</b>&nbsp;&nbsp;(513)<br/>לם ענבל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>12<br/><span class="hour-time">17:15</span><br/><span class="hour-time">18:00</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>ערבית</b>&nbsp;&nbsp;(412)<br/>שוקחה ג&#39;ניפר</div>
+                                                <div class="TTLesson"><b>מורשת דרוזית</b>&nbsp;&nbsp;(413)<br/>נסר אלדין והאב</div>
+                                                <div class="TTLesson"><b>הסטוריה מורחב</b>&nbsp;&nbsp;(422)<br/>הרצמן אורן</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                                <div class="TTChange TableFillChange">סויסה קובי -&gt; חדר: מעבדת מחשבים 1</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 2</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>שולמן אסף</div>
+                                                <div class="TTLesson"><b>מדעי הרפואה 2</b>&nbsp;&nbsp;(מדעים 10)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה פרוייקטים2</b>&nbsp;&nbsp;(מעבדת מחשבים 2)<br/>לבילוב אירנה</div>
+                                                <div class="TTLesson"><b>תקשורת 2</b>&nbsp;&nbsp;(תקשורת - אודיטוריום)<br/>דקל אביב</div>
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                                <div class="TTLesson"><b>מדעי הרפואה 1</b>&nbsp;&nbsp;(מדעים 10)<br/>קליימן איילת</div>
+                                                <div class="TTLesson"><b>הנדסת מערכות 1</b>&nbsp;&nbsp;(301 רובוטיקה)<br/>אקירי עופר</div>
+                                                <div class="TTLesson"><b>תיאטרון מעשי 1</b>&nbsp;&nbsp;(אולם תיאטרלי)<br/>מישוריס ילנה</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה 1</b>&nbsp;&nbsp;(מעבדת מחשבים 3)<br/>אינבינדר אורי</div>
+                                                <div class="TTLesson"><b>הנדסת תוכנה פרוייקטים1</b>&nbsp;&nbsp;(425-מעבדת מחשבים)<br/>שחאדה ג&#39;ואנה</div>
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>ביולוגיה רפואית הרצאות</b>&nbsp;&nbsp;(יואל - אודיטוריום)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>ביולוגיה רפואית הרצאות</b>&nbsp;&nbsp;(יואל - אודיטוריום)<br/>גרופמן לירז</div>
+                                                <div class="TTLesson"><b>אמנות וחדשנות יוצרת</b><br/>קורולוב סטניסלב</div>
+                                                <div class="TTLesson"><b>מצוינות הומניסטיות</b>&nbsp;&nbsp;(513)<br/>לם ענבל</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td class="CName"><b>13<br/><span class="hour-time">18:00</span><br/><span class="hour-time">18:45</span></b></td>
+                                    <td class="TTCell" data-day="0">
+                                                <div class="TTLesson"><b>ערבית</b>&nbsp;&nbsp;(412)<br/>שוקחה ג&#39;ניפר</div>
+                                                <div class="TTLesson"><b>הסטוריה מורחב</b>&nbsp;&nbsp;(422)<br/>הרצמן אורן</div>
+                                                <div class="TTLesson"><b>מורשת דרוזית</b>&nbsp;&nbsp;(413)<br/>נסר אלדין והאב</div>
+                                    </td>
+                                    <td class="TTCell" data-day="1">
+                                    </td>
+                                    <td class="TTCell" data-day="2">
+                                                <div class="TTChange TableEventChange">יום בחירות</div>
+                                    </td>
+                                    <td class="TTCell" data-day="3">
+                                    </td>
+                                    <td class="TTCell" data-day="4">
+                                                <div class="TTLesson"><b>אמנות וחדשנות יוצרת</b><br/>קורולוב סטניסלב</div>
+                                    </td>
+                                    <td class="TTCell" data-day="5">
+                                    </td>
+                            </tr>
+                    </table>
+                </div>
+            <div class="UpdateDate">
+                מעודכן ל: 26.10.2026, שעה: 14:56
+            </div>
+
+    </div>
+</section>
+    <script src="/js/timetable.a0qm65rj6w.js"></script>
+
+        </main>
+    </div>
+
+    <footer b-7m943i0s8c class="border-top footer text-muted mt-auto">
+        <div b-7m943i0s8c class="container">
+            
+
+        </div>
+    </footer>
+
+    <script src="/lib/jquery/dist/jquery.min.o1o13a6vjx.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.493y06b0oq.js"></script>
+    <script src="/js/site.i4vi9lui0v.js"></script>
+
+    
+</body>
+</html>
