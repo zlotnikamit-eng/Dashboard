@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Single-row config table. No User model: this app is single-user by design.
+model AppConfig {
+  id             Int       @id @default(1)
+  classId        String
+  displayName    String?
+  lastSyncAt     DateTime?
+  lastSyncStatus String?
+  updatedAt      DateTime  @updatedAt
+}
+
+// Grade-wide scraped lessons, upserted each sync. Not personal — filtered via PersonalSlot.
+model RawLessonSnapshot {
+  id           String   @id @default(cuid())
+  tab          String
+  weekOffset   Int      @default(0)
+  dayIndex     Int
+  periodNumber Int
+  periodStart  String?
+  periodEnd    String?
+  subject      String
+  room         String?
+  teacher      String?
+  signature    String
+  rawHtml      String?
+  scrapedAt    DateTime @default(now())
+
+  @@unique([tab, weekOffset, dayIndex, periodNumber, signature])
+  @@index([tab, weekOffset, dayIndex, periodNumber])
+}
+
+// Grade-wide TTChange annotations (cancellations, substitutes/room changes), upserted each sync.
+model RawChangeSnapshot {
+  id               String   @id @default(cuid())
+  tab              String
+  weekOffset       Int      @default(0)
+  dayIndex         Int
+  periodNumber     Int
+  changeType       String // "substitute" | "cancellation"
+  rawText          String
+  matchedSignature String?
+  scrapedAt        DateTime @default(now())
+
+  @@index([tab, weekOffset, dayIndex, periodNumber])
+}
+
+// The user's one-time (re-editable) personalization: which signature is "mine" per day+period.
+model PersonalSlot {
+  id           String   @id @default(cuid())
+  dayIndex     Int
+  periodNumber Int
+  subject      String
+  room         String?
+  teacher      String?
+  signature    String
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  changeEvents ChangeEvent[]
+  tasks        Task[]
+
+  @@unique([dayIndex, periodNumber, signature])
+}
+
+// Durable diff log — drives push notifications and the "what changed" feed.
+model ChangeEvent {
+  id             String    @id @default(cuid())
+  personalSlotId String?
+  personalSlot   PersonalSlot? @relation(fields: [personalSlotId], references: [id])
+  dayIndex       Int
+  periodNumber   Int
+  eventType      String // "cancelled" | "room_change" | "substitute" | "new_lesson" | "removed_lesson"
+  description    String
+  detectedAt     DateTime  @default(now())
+  pushedAt       DateTime?
+  pushStatus     String?
+
+  @@index([detectedAt])
+}
+
+model PushSubscription {
+  id        String   @id @default(cuid())
+  endpoint  String   @unique
+  p256dh    String
+  auth      String
+  userAgent String?
+  createdAt DateTime @default(now())
+}
+
+model Task {
+  id             String        @id @default(cuid())
+  title          String
+  notes          String?
+  subject        String?
+  dayIndex       Int?
+  periodNumber   Int?
+  personalSlotId String?
+  personalSlot   PersonalSlot? @relation(fields: [personalSlotId], references: [id])
+  dueDate        DateTime?
+  done           Boolean       @default(false)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([dueDate])
+  @@index([done])
+}
