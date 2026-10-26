@@ -8,7 +8,7 @@ export type DiffEventType = "cancelled" | "room_change" | "substitute" | "remove
 
 // changeType "substitute" covers both a sub teacher and a room swap in the
 // source markup — the text itself is the only way to tell them apart.
-function classifyChangeEvent(change: RawChangeSnapshot): DiffEventType {
+export function classifyChangeEvent(change: RawChangeSnapshot): DiffEventType {
   if (change.changeType === "cancellation" || change.changeType === "event") return "cancelled";
   return change.rawText.includes("חדר") ? "room_change" : "substitute";
 }
@@ -16,7 +16,7 @@ function classifyChangeEvent(change: RawChangeSnapshot): DiffEventType {
 // Match on the slot's own subject/teacher text rather than the scrape-time
 // matchedSignature: a changed lesson's own TTLesson entry is usually absent
 // from the cell, so same-cell signature matching mostly can't find it.
-function changeMentionsSlot(change: RawChangeSnapshot, slot: PersonalSlot): boolean {
+export function changeMentionsSlot(change: RawChangeSnapshot, slot: PersonalSlot): boolean {
   return (
     (!!slot.subject && change.rawText.includes(slot.subject)) ||
     (!!slot.teacher && change.rawText.includes(slot.teacher))
