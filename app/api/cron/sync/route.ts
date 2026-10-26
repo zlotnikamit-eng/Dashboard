@@ -4,6 +4,8 @@ import { fetchSchedulePage } from "@/lib/scraper/fetchPage";
 import { parseSchedule } from "@/lib/scraper/parseSchedule";
 import { matchChangeToLesson } from "@/lib/scraper/matchChangeToLesson";
 import { runDiff } from "@/lib/sync/diff";
+import { sendPushToAll } from "@/lib/push/sendPush";
+import { DAY_NAMES } from "@/lib/schedule/dayNames";
 
 const TAB = "changestable";
 const WEEK_OFFSET = 0;
@@ -75,7 +77,27 @@ export async function GET(request: NextRequest) {
       }),
     ]);
 
-    const { created: changeEventsCreated } = await runDiff();
+    const { created: changeEvents } = await runDiff();
+
+    for (const event of changeEvents) {
+      const day = DAY_NAMES[event.dayIndex] ?? `יום ${event.dayIndex}`;
+      try {
+        await sendPushToAll({
+          title: `שינוי במערכת — ${day}, שעה ${event.periodNumber}`,
+          body: event.description,
+        });
+        await prisma.changeEvent.update({
+          where: { id: event.id },
+          data: { pushedAt: new Date(), pushStatus: "sent" },
+        });
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        await prisma.changeEvent.update({
+          where: { id: event.id },
+          data: { pushStatus: `error: ${message}` },
+        });
+      }
+    }
 
     return NextResponse.json({
       tab: TAB,
@@ -83,7 +105,7 @@ export async function GET(request: NextRequest) {
       lessonsStored: lessonRows.length,
       changesStored: changeRows.length,
       unmatchedChanges: changeRows.filter((c) => c.matchedSignature === null).length,
-      changeEventsCreated,
+      changeEventsCreated: changeEvents.length,
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);

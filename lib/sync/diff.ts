@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db";
-import type { PersonalSlot, RawChangeSnapshot } from "@prisma/client";
+import type { ChangeEvent, PersonalSlot, RawChangeSnapshot } from "@prisma/client";
 
 const TAB = "changestable";
 const WEEK_OFFSET = 0;
@@ -31,7 +31,7 @@ function startOfTodayUtc(): Date {
 // Compares the latest raw snapshot against each active PersonalSlot and
 // creates a ChangeEvent for anything new since today — dedup by (slot,
 // eventType, today) so an ongoing cancellation doesn't re-push every run.
-export async function runDiff(): Promise<{ created: number }> {
+export async function runDiff(): Promise<{ created: ChangeEvent[] }> {
   const [slots, lessons, changes] = await Promise.all([
     prisma.personalSlot.findMany({ where: { active: true } }),
     prisma.rawLessonSnapshot.findMany({ where: { tab: TAB, weekOffset: WEEK_OFFSET } }),
@@ -39,7 +39,7 @@ export async function runDiff(): Promise<{ created: number }> {
   ]);
 
   const todayStart = startOfTodayUtc();
-  let created = 0;
+  const created: ChangeEvent[] = [];
 
   for (const slot of slots) {
     const stillThere = lessons.some(
@@ -68,7 +68,7 @@ export async function runDiff(): Promise<{ created: number }> {
     });
     if (alreadyLoggedToday) continue;
 
-    await prisma.changeEvent.create({
+    const event = await prisma.changeEvent.create({
       data: {
         personalSlotId: slot.id,
         dayIndex: slot.dayIndex,
@@ -77,7 +77,7 @@ export async function runDiff(): Promise<{ created: number }> {
         description,
       },
     });
-    created++;
+    created.push(event);
   }
 
   return { created };
