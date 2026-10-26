@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { fetchSchedulePage } from "@/lib/scraper/fetchPage";
 import { parseSchedule } from "@/lib/scraper/parseSchedule";
 import { matchChangeToLesson } from "@/lib/scraper/matchChangeToLesson";
+import { runDiff } from "@/lib/sync/diff";
 
 const TAB = "changestable";
 const WEEK_OFFSET = 0;
@@ -74,12 +75,15 @@ export async function GET(request: NextRequest) {
       }),
     ]);
 
+    const { created: changeEventsCreated } = await runDiff();
+
     return NextResponse.json({
       tab: TAB,
       weekOffset: WEEK_OFFSET,
       lessonsStored: lessonRows.length,
       changesStored: changeRows.length,
       unmatchedChanges: changeRows.filter((c) => c.matchedSignature === null).length,
+      changeEventsCreated,
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
